@@ -968,6 +968,23 @@ a {
   width: 60%;
 }
 
-.screenshot .center {
+.screenshot {
+  padding-top: 20px;
+}
 
+.screenshot .half img {
+  width: 100%;
+}
+
+.screenshot .half {
+  max-width: 500px;
+  position: absolute;
+}
+
+.screenshot .first {
+  left: 0;
+}
+
+.screenshot .last {
+  right: 0;
 }
