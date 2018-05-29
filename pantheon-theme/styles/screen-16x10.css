@@ -179,7 +179,6 @@ table {
 }
 
 a {
-    text-decoration: none
 }
 
 @page {
@@ -250,7 +249,7 @@ a {
     width: 1024px;
     height: 640px;
     background: #000;
-    line-height: 2;
+    line-height: 1.25;
     font-size: 24px
 }
 
@@ -270,6 +269,7 @@ a {
 }
 
 .slide p {
+  margin-bottom: 20px;
 }
 
 .slide p.note,
@@ -278,8 +278,6 @@ a {
 }
 
 .slide a {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(.09em, currentColor), color-stop(.09em, transparent)) repeat-x;
-    background: linear-gradient(to top, currentColor .09em, transparent .09em) repeat-x;
     color: #EFD01B;
 
 }
@@ -360,6 +358,7 @@ a {
 .slide ol li,
 .slide ul li {
     page-break-inside: avoid;
+    padding: 5px 0;
 }
 
 .slide ol li::before,
@@ -405,6 +404,10 @@ a {
     margin-left: -96px;
     margin-bottom: 1em;
     width: calc(100% + 96px + 112px)
+}
+
+.slide table td {
+  padding: 10px 0;
 }
 
 .slide table td:first-child,
@@ -916,7 +919,8 @@ a {
     }
 }
 
-.slide::after{
+.full.no-page-numbers .slide::after,
+.full.no-progress-bar .progress{
   display: none;
 }
 
@@ -962,6 +966,7 @@ a {
 
 .slide.image-r .cover {
   left: 80%;
+  max-width: 500px;
 }
 
 .slide.image-r .text {
@@ -987,4 +992,11 @@ a {
 
 .screenshot .last {
   right: 0;
+}
+
+.screenshot .center img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 816px;
 }

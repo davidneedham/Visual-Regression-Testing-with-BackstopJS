@@ -9,7 +9,7 @@
 	<!--<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
 	-->
 </head>
-<body class="shower list">
+<body class="shower list no-page-numbers">
 
 	<header class="caption">
 		<h1>Visual Regression Testing with BackstopJS</h1>
@@ -141,21 +141,21 @@
 	</section>
 
 	<section class="slide screenshot">
-		<p>Before:</p>
-		<figure class="center">
+		<h2>Before:</h2>
+		<figure>
 			<img class="" src="/pictures/visual-regression-before.png" alt="Placeholder">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
-		<p>After:</p>
-		<figure class="center">
+		<h2>After:</h2>
+		<figure
 			<img class="" src="/pictures/visual-regression-after.png" alt="Placeholder">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
-		<p>Side by side:</p>
+		<h2>Side by side:</h2>
 		<figure class="half first">
 			<img class="" src="/pictures/visual-regression-before.png" alt="Placeholder">
 		</figure>
@@ -166,7 +166,7 @@
 
 	<section class="slide screenshot">
 		<p>Difference:</p>
-		<figure class="center">
+		<figure>
 			<img class="" src="/pictures/visual-regression-difference.png" alt="Placeholder">
 		</figure>
 	</section>
@@ -287,7 +287,7 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Hacking the example</h2>
+			<h2>Hacking the example (pt 1)</h2>
 			<ul>
 				<li>Edit <code>includes/backstop.json</code></li>
 				<ul>
@@ -328,7 +328,7 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Running the multiple site example</h2>
+			<h2>Running the multiple site example (pt 1)</h2>
 			<ul>
 				<li>Commit your existing changes</li>
 				<li>Checkout the branch: <code>git checkout multiple-sites</code></li>
@@ -349,7 +349,7 @@
 			<ul>
 				<li>Run the command <code>npm run start -- --all</code> (note the extra <code>--</code>)</li>
 				<li>Wait for the results (from multiple sites!)</li>
-				<li>Edit <code>includes/sitesToUpdate.js</code>. (This is where we list all of the sites to test.)</li>
+				<li>Edit <code>includes/sitesToUpdate.js</code> (list of sites to test)</li>
 				<ul>
 					<li>Try changing to one (or more) of your sites</li>
 					<li><code>BackstopReferenceBaseUrl</code> is your local / development URL</li>
@@ -363,7 +363,7 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Running the multiple site example (pt3)</h2>
+			<h2>Running the multiple site example (pt 3)</h2>
 			<ul>
 				<li><code>npm run start</code> tests a single site</li>
 				<ul>
@@ -378,7 +378,7 @@
 		</div>
 	</section>
 
-	<section class="slide image-r">
+	<section class="slide">
 		<div class="text">
 			<h2>Automatically configuring BackstopJS</h2>
 			<p><a href"#">backstop-crawl</a> is a tool for automatically generating the <code>backstop.json</code> required for <a href="#">BackstopJS</a> by crawling a website with <a href="#">NodeJS</a>.</p>
@@ -421,7 +421,7 @@
 			<p>If you can run a script while you brush your teeth, your sites can be as fresh as your mouth!</p>
 		</div>
 		<figure>
-			<img class="" src="/pictures/manual-labor.png" alt="Placeholder">
+			<img class="cover" src="/pictures/manual-labor.png" alt="Placeholder">
 		</figure>
 	</section>
 
