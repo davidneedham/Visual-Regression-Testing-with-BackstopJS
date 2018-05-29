@@ -188,7 +188,7 @@ a {
 }
 
 .shower {
-    color: #212121;
+    color: #FFF;
     counter-reset: slide;
     font-family: Avenir, sans-serif;
     -webkit-print-color-adjust: exact;
@@ -249,7 +249,7 @@ a {
     padding: 104px 112px 0 96px;
     width: 1024px;
     height: 640px;
-    background: #fff;
+    background: #000;
     line-height: 2;
     font-size: 24px
 }
@@ -265,12 +265,11 @@ a {
 
 .slide h2 {
     margin-bottom: 32px;
-    color: #212121;
-    font: 48px/1 Avenir Light, sans-serif
+    color: #FFF;
+    font: 36px/1 Avenir Light, sans-serif
 }
 
 .slide p {
-    margin-bottom: 1em
 }
 
 .slide p.note,
@@ -302,7 +301,16 @@ a {
 .slide mark,
 .slide samp {
     padding: .1em .3em;
-    background: #dbefdc
+    background: #44525E
+}
+
+.slide code.block {
+    padding: 1em;
+    background: #44525E;
+    display: block;
+    font-size: 19px;
+    position: absolute;
+    left: 0;
 }
 
 .slide code,
@@ -352,7 +360,6 @@ a {
 .slide ol li,
 .slide ul li {
     page-break-inside: avoid;
-    text-indent: -2em
 }
 
 .slide ol li::before,
@@ -683,7 +690,7 @@ a {
 .progress {
     bottom: 0;
     height: 8px;
-    background: #4caf50;
+    background: #EFD01B;
     -webkit-transition: width .2s linear;
     transition: width .2s linear;
     clip: rect(0 1024px 8px 0);
@@ -907,4 +914,60 @@ a {
         border: none;
         display: block
     }
+}
+
+.slide::after{
+  display: none;
+}
+
+.slide .title {
+  position: absolute;
+  background: black url(/pantheon-theme/images/logos/Pantheon_Tag_Color_rev.svg) 96% center / 250px no-repeat;
+  height: 150px;
+  width: 890px;
+  top: 50%;
+}
+.slide .title .background {
+  background: #EFD01B linear-gradient(135deg, #EFD01B 50%, transparent 50%) no-repeat;
+  transform: skewX(25deg);
+  position: absolute;
+  width: 800px;
+  height: 150px;
+  z-index: 1;
+  left: -25%;
+}
+.slide .title .text {
+  position: relative;
+  z-index: 2;
+  width: 550px;
+  top: 5px;
+}
+
+.slide .title .text.one-line {
+  top: 20%;
+}
+
+.slide .title .text h2 {
+  margin: 25px 0 0;
+  font-size: 48px;
+}
+
+.slide .title .text p {
+  margin-bottom: 0;
+}
+
+.slide.subtitle .title {
+  background: none;
+}
+
+.slide.image-r .cover {
+  left: 80%;
+}
+
+.slide.image-r .text {
+  width: 60%;
+}
+
+.screenshot .center {
+
 }
