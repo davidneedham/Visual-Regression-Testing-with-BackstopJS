@@ -738,6 +738,7 @@ a {
     background: #4b86c2;
     color: #fff;
     text-align: center;
+    text-decoration: none;
     line-height: 2;
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
