@@ -264,7 +264,7 @@ a {
 
 .slide h2 {
     margin-bottom: 32px;
-    color: #000;
+    color: #fff;
     font: 36px/1 Avenir Light, sans-serif
 }
 
@@ -963,6 +963,11 @@ a {
 
 .slide.subtitle .title {
   background: none;
+}
+
+.slide.subtitle h2,
+#cover h2 {
+  color: #000;
 }
 
 .slide.image-r .cover {
