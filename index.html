@@ -35,7 +35,7 @@
 		<div class="text">
 			<h2>Hi, I'm David</h2>
 			<p>Developer Advocate at Pantheon</p>
-			<p><strong>davidneedham</strong> on <a href="#">GitHub</a> and <a href="https://www.twitter.com/davidneedham">Twitter</a></p>
+			<p><strong>davidneedham</strong> on <a href="https://github.com/davidneedham/">GitHub</a> and <a href="https://www.twitter.com/davidneedham">Twitter</a></p>
 			<p><a href="mailto:david.needham@pantheon.io">david.needham@pantheon.io</a></p>
 			<p>Some things I enjoy are:</p>
 				<ul>
@@ -53,7 +53,7 @@
 		<div class="text">
 			<h2>Hi, I'm Dwayne</h2>
 			<p>Developer Advocate at Pantheon</p>
-			<p><strong>mcdwayne</strong> on <a href="https://www.twitter.com/mcdwayne">Twitter</a>, <a href="#">Drupal.org</a>, <a href="#">WordPress.org</a>, <a href="#">GitHub</a></p>
+			<p><strong>mcdwayne</strong> on <a href="https://www.twitter.com/mcdwayne">Twitter</a>, <a href="https://www.drupal.org/u/mcdwayne">Drupal.org</a>, <a href="https://profiles.wordpress.org/mcdwayne">WordPress.org</a>, <a href="https://github.com/mcdwayne">GitHub</a></p>
 			<p><a href="mailto:dwayne@pantheon.io">dwayne@pantheon.io</a></p>
 			<p>Some things I enjoy are:</p>
 				<ul>
@@ -88,21 +88,11 @@
 	<section class="slide">
 		<h2>Agenda</h2>
 		<table>
-		<tr>
-			<td>Intro and setup</td>
-		</tr>
-		<tr>
-			<td>Visual Regression Testing</td>
-		</tr>
-		<tr>
-			<td>BackstopJS</td>
-		</tr>
-		<tr>
-			<td>Continuous Integration</td>
-		</tr>
-		<tr>
-			<td>Q&A // Breakout Sessions</td>
-		</tr>
+		<tr><td>Intro and setup</td></tr>
+		<tr><td>Visual Regression Testing</td></tr>
+		<tr><td>BackstopJS</td></tr>
+		<tr><td>Continuous Integration</td></tr>
+		<tr><td>Q&A // Breakout Sessions</td></tr>
 		</table>
 	</section>
 
@@ -110,14 +100,14 @@
 		<h2>Logistics</h2>
 		<strong>You need:</strong>
 		<ul>
-			<li>A local dev environment with <a href="#">NodeJS/NPM</a></li>
+			<li>A local dev environment with <a href="https://docs.npmjs.com/getting-started/installing-node">NodeJS/NPM</a></li>
 			<li>A website with:</li>
 			<ul>
 				<li>A live, web-accessible website</li>
 				<li>A local copy (or development site)</li>
 			</ul>
-			<li>Windows users need <a href="#">Python</a> installed</li>
-			<li>Afer class, install <a href="#">BackstopJS</a> globally to keep going</li>
+			<li>Windows users need <a href="https://www.python.org/downloads/">Python</a> installed</li>
+			<li>Afer class, install <a href="https://github.com/garris/BackstopJS">BackstopJS</a> globally to keep going</li>
 		</ul>
 	</section>
 
@@ -128,46 +118,66 @@
 				<h2>Visual Regression Testing</h2>
 			</div>
 		</div>
+
+		<figure>
+			<img class="cover" src="/pictures/onions.jpg" alt="A bunch of onions">
+		</figure>
 	</section>
 
 	<section class="slide">
-		<h2>Visual Regression: The New Pixel Perfect</h2>
-		<ul>
-			<li>The Power of Machine Vision</li>
-			<li>Diligent Difference Detection</li>
-			<li>Easy to create, quick to run</li>
-			<li>Powered by Wraith or BackstopJS</li>
-		</ul>
+		<h2>What is Visual Regression?</h2>
+	</section>
+
+	<section class="slide">
+		<h2>re·gres·sion</h2>
+		<p><strong>/rəˈɡreSH(ə)n/</strong></p>
+		<p><em>noun</em></p>
+		<ol><li>a return to a former or less developed state.</li></ol>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>Before:</h2>
 		<figure>
-			<img class="" src="/pictures/visual-regression-before.png" alt="Placeholder">
+			<img src="/pictures/visual-regression-before.png" alt="A screenshot of a website before a change">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>After:</h2>
 		<figure>
-			<img class="" src="/pictures/visual-regression-after.png" alt="Placeholder">
+			<img src="/pictures/visual-regression-after.png" alt="A screenshot of a website after a change">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>Side by side:</h2>
 		<figure class="half first">
-			<img class="" src="/pictures/visual-regression-before.png" alt="Placeholder">
+			<img src="/pictures/visual-regression-before.png" alt="A screenshot of a website before a change">
 		</figure>
 		<figure class="half second last">
-			<img class="" src="/pictures/visual-regression-after.png" alt="Placeholder">
+			<img src="/pictures/visual-regression-after.png" alt="A screenshot of a website after a change">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
-		<p>Difference:</p>
+		<h2>Difference:</h2>
 		<figure>
-			<img class="" src="/pictures/visual-regression-difference.png" alt="Placeholder">
+			<img src="/pictures/visual-regression-difference.png" alt="A screenshot of a website showing the differences highlighted">
+		</figure>
+	</section>
+
+	<section class="slide image-r">
+		<div class="text">
+			<h2>Visual Regression: The New Pixel Perfect</h2>
+			<ul>
+				<li>The Power of Machine Vision</li>
+				<li>Diligent Difference Detection</li>
+				<li>Easy to create, quick to run</li>
+				<li>Powered by Wraith or BackstopJS</li>
+			</ul>
+		</div>
+		<figure>
+			<img class="cover" src="/pictures/visual-regression-report.png" alt="A screenshot of a generated visual regression report">
 		</figure>
 	</section>
 
@@ -186,9 +196,8 @@
 				<li>Easy to write tests</li>
 			</ul>
 		</div>
-		<figure class="">
-			<img class="cover
-			" src="/pictures/visual-regression-report.png" alt="Placeholder">
+		<figure>
+			<img class="cover" src="" alt="">
 		</figure>
 	</section>
 
@@ -202,24 +211,44 @@
 			</ul>
 		</div>
 		<figure>
-			<img class="cover" src="/pictures/noisy-texture-300x300-o100-d11-c-ffffff-t0.png" alt="Placeholder">
+			<img class="cover" src="/pictures/noisy-texture-300x300-o100-d11-c-ffffff-t0.png" alt="Static noise">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>Security updates as a killer use case</h2>
 		<figure>
-			<img class="" src="/pictures/D6-update-module-report.png" alt="Placeholder">
+			<img src="/pictures/D6-update-module-report.png" alt="Drupal 6 security updates available">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>Security updates & visual changes</h2>
 		<figure class="half first">
-			<img class="" src="/pictures/pantheondemo-before.png" alt="Placeholder">
+			<img src="/pictures/pantheondemo-before.png" alt="A screenshot of pantheondemo.com before updates">
 		</figure>
 		<figure class="half second last">
-			<img class="" src="/pictures/pantheondemo-after.png" alt="Placeholder">
+			<img src="/pictures/pantheondemo-after.png" alt="A screenshot of pantheondemo.com after updates">
+		</figure>
+	</section>
+
+	<section class="slide screenshot">
+		<h2>What's the difference?</h2>
+		<figure class="half first">
+			<img src="/pictures/pantheondemo-before.png" alt="A screenshot of pantheondemo.com before updates">
+		</figure>
+		<figure class="half second last">
+			<img src="/pictures/pantheondemo-after.png" alt="A screenshot of pantheondemo.com after updates">
+		</figure>
+	</section>
+
+	<section class="slide screenshot">
+		<h2>What's the difference? Nothing!</h2>
+		<figure class="half first">
+			<img src="/pictures/pantheondemo-before.png" alt="A screenshot of pantheondemo.com before updates">
+		</figure>
+		<figure class="half second last">
+			<img src="/pictures/pantheondemo-after.png" alt="A screenshot of pantheondemo.com after updates">
 		</figure>
 	</section>
 
@@ -253,13 +282,13 @@
 	<section class="slide image-r">
 		<div class="text">
 			<h2>Clone the example repo</h2>
-			<p>We've created <a href="#">an example repo</a> to help you get setup locally.</p>
-			<p>There are detailed instructions in <a href="#">the README</a> but you can get started by cloning the repo.</p>
+			<p>We've created <a href="https://github.com/ataylorme/loopconf-2018-automated-update-workshop.git">an example repo</a> to help you get setup locally.</p>
+			<p>There are detailed instructions in <a href="https://github.com/ataylorme/loopconf-2018-automated-update-workshop/blob/master/README.md">the README</a> but you can get started by cloning the repo.</p>
 		</div>
 
 		<code class="block">git clone https://github.com/ataylorme/loopconf-2018-automated-update-workshop.git</code>
 		<figure>
-			<img class="cover" src="/pictures/loopconf-workshop-repo-screenshot.png" alt="Placeholder">
+			<img class="cover" src="/pictures/loopconf-workshop-repo-screenshot.png" alt="A screenshot of the repo we're cloning">
 		</figure>
 	</section>
 
@@ -278,14 +307,14 @@
 	<section class="slide screenshot">
 		<h2>Viewing the results</h2>
 		<figure>
-			<img class="" src="/pictures/hacking-step-1-results.png" alt="Placeholder">
+			<img src="/pictures/hacking-step-1-results.png" alt="A screenshot showing the results of our first exercise">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<h2>Backstop.json file</h2>
 		<figure>
-			<img class="" src="/pictures/Screen Shot 2018-01-16 at 4.18.14 PM.png" alt="Placeholder">
+			<img src="/pictures/Screen Shot 2018-01-16 at 4.18.14 PM.png" alt="A screenshot of the backstop.json file.">
 		</figure>
 	</section>
 
@@ -326,7 +355,7 @@
 			<p>We've tested one site at a time. What happens when you need to update all your sites? How can we scale BackstopJS?</p>
 		</div>
 		<figure>
-			<img class="cover" src="/pictures/graph-up.png" alt="Placeholder">
+			<img class="cover" src="/pictures/graph-up.png" alt="A clipart image of a graph going up">
 		</figure>
 	</section>
 
@@ -367,11 +396,11 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Running the multiple site example (pt 3)</h2>
+			<h2>Running the multiple site example (notes)</h2>
 			<ul>
 				<li><code>npm run start</code> tests a single site</li>
 				<ul>
-					<li><code>npm run start -- --site=my-cool-site</code> to specify a site without prompting</li>
+					<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
 				</ul>
 				<li><code>npm run start -- --all</code> tests all the sites in <code>includes/sitesToUpdate.js</code></li>
 				<li>Backstop config doesn't hae to be hard-coded JSON</li>
@@ -385,11 +414,11 @@
 	<section class="slide">
 		<div class="text">
 			<h2>Automatically configuring BackstopJS</h2>
-			<p><a href"#">backstop-crawl</a> is a tool for automatically generating the <code>backstop.json</code> required for <a href="#">BackstopJS</a> by crawling a website with <a href="#">NodeJS</a>.</p>
+			<p><a href"https://github.com/fffunction/backstop-crawl/">backstop-crawl</a> is a tool for automatically generating the <code>backstop.json</code> required for <a href="https://github.com/garris/BackstopJS">BackstopJS</a> by crawling a website with <a href="https://nodejs.org/en/">NodeJS</a>.</p>
 			<p>Great for brochure and smaller sites without tons of pages.</p>
 		</div>
 		<figure>
-			<img class="" src="/pictures/backstop-crawl.gif" alt="Placeholder">
+			<img src="/pictures/backstop-crawl.gif" alt="An animated gif showing backstop crawling pages on a website">
 		</figure>
 	</section>
 
@@ -402,7 +431,7 @@
 			</ul>
 		</div>
 		<figure>
-			<img class="cover" src="/pictures/custom-backstop-json.png" alt="Placeholder">
+			<img class="cover" src="/pictures/custom-backstop-json.png" alt="A screenshot of the backstop.json file in GitHub">
 		</figure>
 	</section>
 
@@ -425,22 +454,22 @@
 			<p>If you can run a script while you brush your teeth, your sites can be as fresh as your mouth!</p>
 		</div>
 		<figure>
-			<img class="cover" src="/pictures/manual-labor.png" alt="Placeholder">
+			<img class="cover" src="/pictures/manual-labor.png" alt="A group of people pushing a heavy cart">
 		</figure>
 	</section>
 
 	<section class="slide screenshot">
 		<figure class="center">
-			<img class="" src="/pictures/cron-job.png" alt="Placeholder">
+			<img src="/pictures/cron-job.png" alt="A clock with the words cron job on it">
 		</figure>
 		<p>* */12 * * * /bin/bash /Users/me/Scripts/update-my-site.sh >/dev/null 2>&1</p>
 	</section>
 
 	<section class="slide image-r">
 		<div class="text">
-			<h2>But make the robots do the work</h2>
+			<h2>Make robots do the work!</h2>
 			<ul>
-				<li>Robots are happy to help!</li>
+				<li>Robots are happy to help</li>
 				<li>Lots of benefits:</li>
 					<ul>
 						<li>Reliability</li>

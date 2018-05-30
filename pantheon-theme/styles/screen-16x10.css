@@ -976,11 +976,11 @@ a {
 }
 
 .slide.image-r .text {
-  width: 60%;
+  width: 55%;
 }
 
 .screenshot {
-  padding-top: 20px;
+  padding: 20px 0 0;
 }
 
 .screenshot .half img {
@@ -1005,4 +1005,13 @@ a {
   width: 100%;
   margin: 0 auto;
   max-width: 816px;
+}
+
+.slide.white {
+  background: #FFF;
+  color: #000;
+}
+
+.slide.white h2 {
+  color: #000;
 }
