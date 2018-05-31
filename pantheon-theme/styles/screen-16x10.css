@@ -274,7 +274,7 @@ a {
 
 .slide p.note,
 .slide pre .comment {
-    color: #9e9e9e
+    color: #9e9e9e;
 }
 
 .slide a {
@@ -284,14 +284,15 @@ a {
 
 .slide b,
 .slide strong {
-    font-weight: 700
+    font-weight: 700;
+    color: #EFD01B;
 }
 
 .slide blockquote,
 .slide dfn,
 .slide em,
 .slide i {
-    font-style: italic
+    font-style: italic;
 }
 
 .slide code,
@@ -303,7 +304,7 @@ a {
 }
 
 .slide code.block {
-    padding: 1em;
+    padding: 0.8em;
     background: #44525E;
     display: block;
     font-size: 19px;
@@ -443,7 +444,9 @@ a {
 .slide pre {
     margin-bottom: 1em;
     counter-reset: code;
-    white-space: normal
+    white-space: normal;
+    overflow: scroll;
+    max-height: 500px;
 }
 
 .slide pre code {
@@ -456,7 +459,8 @@ a {
     white-space: pre;
     -moz-tab-size: 4;
     -o-tab-size: 4;
-    tab-size: 4
+    tab-size: 4;
+
 }
 
 .slide pre code:not(:only-child).mark {
@@ -1014,4 +1018,8 @@ a {
 
 .slide.white h2 {
   color: #000;
+}
+
+pre.smaller {
+  font-size: smaller;
 }

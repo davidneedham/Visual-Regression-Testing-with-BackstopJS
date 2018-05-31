@@ -197,7 +197,7 @@
 			</ul>
 		</div>
 		<figure>
-			<img class="cover" src="" alt="">
+			<img class="cover" src="/pictures/Virato_Multiscreen.jpg" alt="A website on multiple devices">
 		</figure>
 	</section>
 
@@ -206,7 +206,7 @@
 			<h2>Visual Regression Limitations</h2>
 			<ul>
 				<li>Lots of noise in the testing process</li>
-				<li>High number of false positives</li>
+				<li>High number of false negatives</li>
 				<li>Difficulties with dynamic content</li>
 			</ul>
 		</div>
@@ -282,25 +282,26 @@
 	<section class="slide image-r">
 		<div class="text">
 			<h2>Clone the example repo</h2>
-			<p>We've created <a href="https://github.com/ataylorme/loopconf-2018-automated-update-workshop.git">an example repo</a> to help you get setup locally.</p>
-			<p>There are detailed instructions in <a href="https://github.com/ataylorme/loopconf-2018-automated-update-workshop/blob/master/README.md">the README</a> but you can get started by cloning the repo.</p>
+			<p>We've created <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">an example repo</a> that we're going to clone to give you a jumpstart.</p>
+			<p>There are detailed instructions in the README but you can get started by cloning the repo:</p>
 		</div>
 
-		<code class="block">git clone https://github.com/ataylorme/loopconf-2018-automated-update-workshop.git</code>
+		<code class="block">git clone https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git</code>
 		<figure>
-			<img class="cover" src="/pictures/loopconf-workshop-repo-screenshot.png" alt="A screenshot of the repo we're cloning">
+			<img class="cover" src="/pictures/screencapture-github-davidneedham-Visual-Regression-Testing-BackstopJS-demo-2018-05-30-19_02_53.jpg" alt="A screenshot of the repo we're cloning">
 		</figure>
 	</section>
 
 	<section class="slide">
 		<div class="text">
-			<h2>Running the example</h2>
-			<ul>
-				<li>Checkout a new branch: <code>git checkout -b backstop-hacking-1</code></li>
-				<li>Install Node dependencies: <code>npm install</code></li>
-				<li>Run the example script: <code>npm run start</code></li>
+			<h2>Run the example</h2>
+			<ol>
+				<li>Change into the folder <br /><code>cd Visual-Regression-Testing-BackstopJS-demo</code></li>
+				<li>Checkout a new branch <br /><code>git checkout -b my-hacking-1</code></li>
+				<li>Install Node dependencies <br /><code>npm install</code></li>
+				<li>Run the example script <br /><code>npm run start</code></li>
 				<li>Wait for the results (it should open in your browser automatically)</li>
-			</ul>
+			</ol>
 		</div>
 	</section>
 
@@ -313,9 +314,59 @@
 
 	<section class="slide screenshot">
 		<h2>Backstop.json file</h2>
-		<figure>
-			<img src="/pictures/Screen Shot 2018-01-16 at 4.18.14 PM.png" alt="A screenshot of the backstop.json file.">
-		</figure>
+		<pre class="smaller"><code>
+{
+  "viewports": [
+    {
+      "name": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "tablet_v",
+      "width": 568,
+      "height": 1024
+    },
+    {
+      "name": "tablet_h",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "https://dev-wp-quicksilver-demo.pantheonsite.io/",
+      "referenceUrl": "https://scalewp.io/",
+      "hideSelectors": [],
+      "selectors": [
+        "document"
+      ],
+      "readyEvent": null,
+      "delay": 1500,
+      "misMatchThreshold" : 0.1
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "compare_data": "backstop_data/bitmaps_test/compare.json",
+    "casper_scripts": "backstop_data/casper_scripts"
+  },
+  "engine": "chrome",
+  "report": [ "browser", "CI" ],
+  "casperFlags": [],
+  "debug": false,
+  "port": 3001
+}
+
+
+</code></pre>
 	</section>
 
 	<section class="slide">
@@ -363,14 +414,11 @@
 		<div class="text">
 			<h2>Running the multiple site example (pt 1)</h2>
 			<ul>
-				<li>Commit your existing changes</li>
-				<li>Checkout the branch: <code>git checkout multiple-sites</code></li>
-				<li>Checkout a new branch to work on: <code>git checkout -b backstop-hacking-2</code></li>
-				<li>Re-install Node dependies: <code>npm install</code></li>
-				<li>Rerun the example script: <code>npm run start</code></li>
-				<ul>
-					<li>Type a site name from the list</li>
-				</ul>
+				<li>Commit your existing changes<br /><code>git commit -m "All of my changes"</code></li>
+				<li>Checkout the branch<br /><code>git checkout multiple-sites</code></li>
+				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-2</code></li>
+				<li>Re-install Node dependies<br /><code>npm install</code></li>
+				<li>Rerun the example script<br /><code>npm run start</code> (and type a site name from the list when prompted)</li>
 				<li>Wait for the results</li>
 			</ul>
 		</div>
@@ -399,11 +447,9 @@
 			<h2>Running the multiple site example (notes)</h2>
 			<ul>
 				<li><code>npm run start</code> tests a single site</li>
-				<ul>
-					<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
-				</ul>
+				<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
 				<li><code>npm run start -- --all</code> tests all the sites in <code>includes/sitesToUpdate.js</code></li>
-				<li>Backstop config doesn't hae to be hard-coded JSON</li>
+				<li>Backstop config doesn't have to be hard-coded JSON</li>
 				<ul>
 					<li>See <code>includes/backstopConfig.js</code> for a dynamic configuration example</li>
 				</ul>
