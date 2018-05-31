@@ -460,12 +460,26 @@
 	<section class="slide">
 		<div class="text">
 			<h2>Automatically configuring BackstopJS</h2>
-			<p><a href"https://github.com/fffunction/backstop-crawl/">backstop-crawl</a> is a tool for automatically generating the <code>backstop.json</code> required for <a href="https://github.com/garris/BackstopJS">BackstopJS</a> by crawling a website with <a href="https://nodejs.org/en/">NodeJS</a>.</p>
+			<p><a href="https://github.com/fffunction/backstop-crawl/">backstop-crawl</a> is a tool for automatically generating the <code>backstop.json</code> file by crawling a website with <a href="https://nodejs.org/en/">NodeJS</a>.</p>
 			<p>Great for brochure and smaller sites without tons of pages.</p>
 		</div>
 		<figure>
 			<img src="/pictures/backstop-crawl.gif" alt="An animated gif showing backstop crawling pages on a website">
 		</figure>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>backstop-crawl example</h2>
+			<ul>
+				<li>Commit your existing changes<br /><code>git commit -m "All of my changes"</code></li>
+				<li>Checkout master<br /><code>git checkout master</code></li>
+				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-3</code></li>
+				<li>Install backstop-crawl<br /><code>npm install --global backstop-crawl</code></li>
+				<li>Generate a new backstop.json file with backstop-crawl<br /><code>backstop-crawl http://live-needham-bikes.pantheonsite.io -o includes/backstop.json --ignore-robots --reference-url http://dev-needham-bikes.pantheonsite.io</code></li>
+				<li>Rerun the script</li>
+			</ul>
+		</div>
 	</section>
 
 	<section class="slide image-r">
@@ -606,6 +620,16 @@
 		</figure>
 	</section>
 
+	<section class="slide image-r">
+		<div class="text">
+			<h2>CI: Real world example</h2>
+			<p><a href="https://github.com/pantheon-systems/example-terminus-auto-update-script">Pantheon Example Terminus Auto Update Script</a></p>
+		</div>
+		<figure>
+			<img class="cover" src="/pictures/Pantheon Example Terminus Auto Update Script on Github.png" alt="A screenshot of the github repo for Pantheon Example Terminus Auto Update Script">
+		</figure>
+	</section>
+
 	<section class="slide subtitle">
 		<div class="title">
 			<div class="background"></div>
@@ -625,7 +649,7 @@
 	</section>
 
 	<footer class="badge">
-		<a href="https://github.com/davidneedham/Visual-Regression-Testing-with-BackstopJS">Fork this on GitHub</a>
+		<!--<a href="https://github.com/davidneedham/Visual-Regression-Testing-with-BackstopJS">Fork this on GitHub</a>-->
 	</footer>
 
 	<div class="progress"></div>
