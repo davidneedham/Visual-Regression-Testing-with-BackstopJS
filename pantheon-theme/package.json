@@ -1,0 +1,79 @@
+{
+  "_from": "shower-material@^1.1.0",
+  "_id": "shower-material@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-LFUksajmNHHMJrbQk0Co7PmJXukXwd1qv+7LA5pBHgRF3u8EtR2EqB1kAAQoMrzVEXzzTqXg/E2bH+ombd9oaw==",
+  "_location": "/shower-material",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "shower-material@^1.1.0",
+    "name": "shower-material",
+    "escapedName": "shower-material",
+    "rawSpec": "^1.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.1.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-material/-/shower-material-1.1.0.tgz",
+  "_shasum": "390dc0558cd0fe18176b1b23829cf59455f31638",
+  "_spec": "shower-material@^1.1.0",
+  "_where": "/Users/davidneedham/Desktop/Visual Regression Testing with BackstopJS",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/material/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Material theme for Shower HTML presentation engine",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.0.0",
+    "path-exists-cli": "^1.0.0",
+    "postcss-csso": "^2.0.0",
+    "shower-core": "latest"
+  },
+  "files": [
+    "docs/**",
+    "fonts/**",
+    "images/**",
+    "pictures/**",
+    "styles/*.css",
+    "index.html",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "homepage": "https://github.com/shower/material",
+  "keywords": [
+    "shower",
+    "presentation",
+    "material",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "shower-material",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/material.git"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "prepublish": "npm run styles",
+    "styles": "gulp styles",
+    "test": "path-exists styles/screen-16x10.css && path-exists styles/screen-4x3.css"
+  },
+  "version": "1.1.0"
+}
