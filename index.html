@@ -52,10 +52,11 @@
 	<section class="slide">
 		<h2>Agenda</h2>
 		<table>
-		<tr><td>Intro and setup</td></tr>
+		<tr><td>Intro and Setup</td></tr>
 		<tr><td>Visual Regression Testing</td></tr>
 		<tr><td>BackstopJS</td></tr>
 		<tr><td>Continuous Integration</td></tr>
+		<tr><td>Standalone Node App</td></tr>
 		<tr><td>Q&A</td></tr>
 		</table>
 	</section>
@@ -243,38 +244,6 @@
 		<p><a href="https://github.com/garris/BackstopJS">github.com/garris/BackstopJS</a></p>
 	</section>
 
-	<section class="slide subtitle">
-		<div class="title">
-			<div class="background"></div>
-			<div class="text one-line">
-				<h2>Running BackstopJS</h2>
-			</div>
-		</div>
-		<figure>
-			<!-- <img class="cover" src="pictures/22-backstop-bg.jpg" alt="The BackstopJS logo on a background"> -->
-		</figure>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running BackstopJS globally</h2>
-			<ol>
-				<li>Navigate to your local project</li>
-				<li>Initialize Backstop: <code>backstop init</code></li>
-				<li>Edit your <code>backstop.js</code> file
-				<li>Change the <code>referenceUrl</code> (live site) and <code>url</code> (local site)</li>
-				<li>Run <code>backstop test</code></li>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide screenshot">
-		<h2>Viewing the results</h2>
-		<figure>
-			<img src="pictures/26-hacking-step-1-results.jpg" alt="A screenshot showing the results of our first exercise">
-		</figure>
-	</section>
-
 	<section class="slide screenshot">
 		<h2>Backstop.json file</h2>
 		<pre class="smaller"><code>
@@ -330,33 +299,51 @@
 </code></pre>
 	</section>
 
+	<section class="slide screenshot">
+		<h2>Viewing the results</h2>
+		<figure>
+			<img src="pictures/26-hacking-step-1-results.jpg" alt="A screenshot showing the results of our first exercise">
+		</figure>
+	</section>
+
+	<section class="slide subtitle">
+		<div class="title">
+			<div class="background"></div>
+			<div class="text one-line">
+				<h2>Running BackstopJS</h2>
+			</div>
+		</div>
+		<figure>
+			<!-- <img class="cover" src="pictures/22-backstop-bg.jpg" alt="The BackstopJS logo on a background"> -->
+		</figure>
+	</section>
+
 	<section class="slide">
 		<div class="text">
-			<h2>Customizing URLs</h2>
-			<ul>
-				<li>Edit <code>backstop.json</code></li>
-				<ul>
-					<li>Set <code>referenceUrl</code> in <code>scenarios</code> to your production site URL</li>
-					<li>Set <code>url</code> in <code>scenarios</code> to your local / development URL</li>
-					<li>Start your local environment if needed</li>
-				</ul>
-				<li>Rerun backstop</li>
-				<li>Wait for the results (it should open in your browser automatically)</li>
-			</ul>
+			<h2>Running BackstopJS globally</h2>
+			<ol>
+				<li>Navigate to your local project</li>
+				<li>Initialize Backstop: <code>backstop init</code></li>
+				<li>Edit your <code>backstop.json</code> file:
+					<ul>
+						<li><code>label</code>: name of your project</li>
+						<li><code>referenceUrl</code>: <em>local</em> or <em>development</em> URL</li>
+						<li><code>url</code>: <em>production</em> URL</li>
+					</ul></li>
+				<li>Create new reference screenshots: <code>backstop reference</code></li>
+				<li>Run tests: <code>backstop test</code></li>
+			</ol>
 		</div>
 	</section>
 
 	<section class="slide">
 		<div class="text">
-			<h2>Customizing viewports</h2>
+			<h2>Running BackstopJS (notes)</h2>
 			<ul>
-				<li>Edit <code>includes/backstop.json</code></li>
-				<ul>
-					<li>Try changing <code>viewports</code> or adding more <code>scenarios</code> to test other pages</li>
-				</ul>
-				<li>Update the website on your local / development URL</li>
-				<li>Rerun the script with <code>npm run start</code></li>
-				<li><strong>Is your updated site different than production?</strong></li>
+				<li>What happens if we change <code>viewports</code> or <code>scenarios</code>?</li>
+				<li>Regenerate references with <code>backstop reference</code></li>
+				<li>Rerun the test with <code>backstop test</code></li>
+				<li><strong>Gotcha:</strong> Is your updated site different than production?</li>
 			</ul>
 		</div>
 	</section>
@@ -386,12 +373,10 @@
 		<div class="text">
 			<h2>backstop-crawl example</h2>
 			<ol>
-				<li>Commit your existing changes<br /><code>git commit -am "All of my changes"</code></li>
-				<li>Checkout master<br /><code>git checkout master</code></li>
-				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-3</code></li>
 				<li>Install backstop-crawl<br /><code>npm install --global backstop-crawl</code></li>
-				<li>Generate a new backstop.json file with backstop-crawl<br /><code>backstop-crawl http://live-needham-bikes.pantheonsite.io -o includes/backstop.json --ignore-robots --reference-url http://dev-needham-bikes.pantheonsite.io</code></li>
-				<li>Rerun the script</li>
+				<li>Generate a new backstop.json file with backstop-crawl<br /><code>backstop-crawl https://www.pantheondemo.com -o backstop.json --ignore-robots --reference-url https://pantheonweeklydemosite.lndo.site</code></li>
+				<li>Edit <code>backstop.json</code> to change the <code>engine</code> to <code>chromy</code></li>
+				<li>Get new references and test</li>
 			</ol>
 		</div>
 	</section>
@@ -418,14 +403,14 @@
 		</div>
 	</section>
 
-	<section class="slide image-r">
+	<!-- <section class="slide image-r">
 		<div class="text">
 			<h2>You can do this manually</h2>
 			<ul>
-				<li>Updates <strong>can</strong> be done manually</li>
-				<li>Testing <strong>can</strong> be done manually</li>
+				<li>Updates <em>can</em> be done manually</li>
+				<li>Testing <em>can</em> be done manually</li>
 			</ul>
-			<p>If you can run a script while you brush your teeth, your sites can be as fresh as your mouth!</p>
+			<p>... but why would you want to? Think of the benefits to automation!</p>
 		</div>
 		<figure>
 			<img class="cover" src="pictures/38-manual-labor.jpg" alt="A group of people pushing a heavy cart">
@@ -440,7 +425,7 @@
 		<figure>
 			<img class="cover" src="pictures/39-clock.svg" alt="A vector clock" width="300px" >
 		</figure>
-	</section>
+	</section> -->
 
 	<section class="slide image-r">
 		<div class="text">
@@ -551,7 +536,7 @@
 		<div class="title">
 			<div class="background"></div>
 			<div class="text one-line">
-				<h2>Prebuilt Node Example</h2>
+				<h2>Standalone App</h2>
 			</div>
 		</div>
 		<figure>
@@ -582,6 +567,16 @@
 				<li>Install Node dependencies <br /><code>npm install</code></li>
 				<li>Run the example script <br /><code>npm run start</code></li>
 				<li>Wait for the results (it should open in your browser automatically)</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>Hacking the example</h2>
+			<ol>
+				<li>Edit <code>includes/backstop.json</code></li>
+				<li>Rerun the script with <code>npm run start</code></li>
 			</ol>
 		</div>
 	</section>
