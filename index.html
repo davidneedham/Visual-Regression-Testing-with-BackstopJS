@@ -48,58 +48,6 @@
 			</figure>
 		</div>
 	</section>
-<!-- PANTHEORS WHO WON'T BE HERE
-	<section class="slide bio image-r">
-		<div class="text">
-			<h2>Hi, I'm Dwayne</h2>
-			<p>Developer Advocate at Pantheon</p>
-			<p><strong>mcdwayne</strong> on <a href="https://www.twitter.com/mcdwayne">Twitter</a>, <a href="https://www.drupal.org/u/mcdwayne">Drupal.org</a>, <a href="https://profiles.wordpress.org/mcdwayne">WordPress.org</a>, <a href="https://github.com/mcdwayne">GitHub</a></p>
-			<p><a href="mailto:dwayne@pantheon.io">dwayne@pantheon.io</a></p>
-			<p>Some things I enjoy are:</p>
-				<ul>
-					<li>Improv</li>
-					<li>Karaoke</li>
-					<li>Webcomics and comic books</li>
-					<li>Finger knitting and crochet</li>
-				</ul>
-			<figure>
-				<img class="cover" src="pictures/03-Dwayne-McDaniel-Pantheon.jpg" alt="David Needham">
-			</figure>
-		</div>
-	</section>
-
-	<section class="slide bio image-r">
-		<div class="text">
-			<h2>Hi, I'm Rachel</h2>
-			<p>Senior Technical Writer at Pantheon</p>
-			<p><strong>rachwhitton</strong> on <a href="https://www.twitter.com/RachWhitton">Twitter</a></p>
-			<p>Some things I enjoy are:</p>
-				<ul>
-					<li>Camping</li>
-					<li>Reading</li>
-					<li>Gaming</li>
-				</ul>
-			<figure>
-				<img class="cover" src="pictures/04-Rachel-Whitton-Pantheon.jpg" alt="Rachel Whitton">
-			</figure>
-		</div>
-
-	<section class="slide bio image-r">
-		<div class="text">
-			<h2>Hi, my name is...</h2>
-
-				<ul>
-					<li>Where are you from?</li>
-					<li>What do you do with Drupal?</li>
-					<li>Name one accomplishment.</li>
-				</ul>
-			<figure>
-				<img width="540px" height="540px" class="cover" src="pictures/05-anonymous.svg" alt="Anonymous silhouette">
-			</figure>
-		</div>
-	</section>
-
-</section> -->
 
 	<section class="slide">
 		<h2>Agenda</h2>
@@ -123,7 +71,7 @@
 				<li>A local copy (or development site)</li>
 			</ul>
 			<li>Windows users need <a href="https://www.python.org/downloads/">Python</a> installed</li>
-			<li>Afer class, install <a href="https://github.com/garris/BackstopJS">BackstopJS</a> globally to keep going</li>
+			<li><a href="https://github.com/garris/BackstopJS">BackstopJS</a> installed globally (or our <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">standalone node app</a>)<ul><li><code>npm install -g backstopjs</code></li></ul></li>
 		</ul>
 	</section>
 
@@ -295,29 +243,27 @@
 		<p><a href="https://github.com/garris/BackstopJS">github.com/garris/BackstopJS</a></p>
 	</section>
 
-	<section class="slide image-r">
-		<div class="text">
-			<h2>Clone the example repo</h2>
-			<p>We've created <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">an example repo</a> that we're going to clone to give you a jumpstart.</p>
-			<p>There are detailed instructions in the README to run through this on your own next time. </p>
-			<p>Today we're going to get started by cloning the repo:</p>
+	<section class="slide subtitle">
+		<div class="title">
+			<div class="background"></div>
+			<div class="text one-line">
+				<h2>Running BackstopJS</h2>
+			</div>
 		</div>
-
-		<code class="block">git clone https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git</code>
 		<figure>
-			<img class="cover" src="pictures/24-screencapture-github-davidneedham-Visual-Regression-Testing-BackstopJS-demo-2018-05-30-19_02_53.jpg" alt="A screenshot of the repo we're cloning">
+			<!-- <img class="cover" src="pictures/22-backstop-bg.jpg" alt="The BackstopJS logo on a background"> -->
 		</figure>
 	</section>
 
 	<section class="slide">
 		<div class="text">
-			<h2>Run the example</h2>
+			<h2>Running BackstopJS globally</h2>
 			<ol>
-				<li>Change into the folder <br /><code>cd Visual-Regression-Testing-BackstopJS-demo</code></li>
-				<li>Checkout a new branch <br /><code>git checkout -b my-hacking-1</code></li>
-				<li>Install Node dependencies <br /><code>npm install</code></li>
-				<li>Run the example script <br /><code>npm run start</code></li>
-				<li>Wait for the results (it should open in your browser automatically)</li>
+				<li>Navigate to your local project</li>
+				<li>Initialize Backstop: <code>backstop init</code></li>
+				<li>Edit your <code>backstop.js</code> file
+				<li>Change the <code>referenceUrl</code> (live site) and <code>url</code> (local site)</li>
+				<li>Run <code>backstop test</code></li>
 			</ol>
 		</div>
 	</section>
@@ -381,22 +327,20 @@
   "debug": false,
   "port": 3001
 }
-
-
 </code></pre>
 	</section>
 
 	<section class="slide">
 		<div class="text">
-			<h2>Hacking the example (pt 1)</h2>
+			<h2>Customizing URLs</h2>
 			<ul>
-				<li>Edit <code>includes/backstop.json</code></li>
+				<li>Edit <code>backstop.json</code></li>
 				<ul>
 					<li>Set <code>referenceUrl</code> in <code>scenarios</code> to your production site URL</li>
 					<li>Set <code>url</code> in <code>scenarios</code> to your local / development URL</li>
 					<li>Start your local environment if needed</li>
 				</ul>
-				<li>Rerun the script with <code>npm run start</code></li>
+				<li>Rerun backstop</li>
 				<li>Wait for the results (it should open in your browser automatically)</li>
 			</ul>
 		</div>
@@ -404,7 +348,7 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Hacking the example (pt 2)</h2>
+			<h2>Customizing viewports</h2>
 			<ul>
 				<li>Edit <code>includes/backstop.json</code></li>
 				<ul>
@@ -425,52 +369,6 @@
 		<figure>
 			<img class="cover" width="400px" src="pictures/30-graph-up.png" alt="A clipart image of a graph going up">
 		</figure>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (pt 1)</h2>
-			<ol>
-				<li>Commit your existing changes<br /><code>git commit -am "All of my changes"</code></li>
-				<li>Checkout the branch<br /><code>git checkout multiple-sites</code></li>
-				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-2</code></li>
-				<li>Re-install Node dependies<br /><code>npm install</code></li>
-				<li>Rerun the example script<br /><code>npm run start</code> (and type a site name from the list when prompted)</li>
-				<li>Wait for the results</li>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (pt 2)</h2>
-			<ol>
-				<li>Run the command <code>npm run start -- --all</code> (note the extra <code>--</code>)</li>
-				<li>Wait for the results (from multiple sites!)</li>
-				<li>Edit <code>includes/sitesToUpdate.js</code> (list of sites to test)</li>
-				<ul>
-					<li>Try changing to one (or more) of your sites</li>
-					<li><code>BackstopReferenceBaseUrl</code> is your local / development URL</li>
-					<li><code>BackstopTestUrl</code> is your production site URL</li>
-					<li><code>pathsToTest</code> is the array of URIs to test for each site</li>
-				</ul>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (notes)</h2>
-			<ul>
-				<li><code>npm run start</code> tests a single site</li>
-				<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
-				<li><code>npm run start -- --all</code> tests all the sites in <code>includes/sitesToUpdate.js</code></li>
-				<li>Backstop config doesn't have to be hard-coded JSON</li>
-				<ul>
-					<li>See <code>includes/backstopConfig.js</code> for a dynamic configuration example</li>
-				</ul>
-			</ul>
-		</div>
 	</section>
 
 	<section class="slide">
@@ -653,8 +551,84 @@
 		<div class="title">
 			<div class="background"></div>
 			<div class="text one-line">
-				<h2>Q&A</h2>
+				<h2>Prebuilt Node Example</h2>
 			</div>
+		</div>
+		<figure>
+			<!-- <img class="cover" src="pictures/22-backstop-bg.jpg" alt="The BackstopJS logo on a background"> -->
+		</figure>
+	</section>
+
+	<section class="slide image-r">
+		<div class="text">
+			<h2>Clone the example repo</h2>
+			<p>We've created <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">an example repo</a> that we're going to clone to give you a jumpstart.</p>
+			<p>There are detailed instructions in the README to run through this on your own next time. </p>
+			<p>Today we're going to get started by cloning the repo:</p>
+		</div>
+
+		<code class="block">git clone https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git</code>
+		<figure>
+			<img class="cover" src="pictures/24-screencapture-github-davidneedham-Visual-Regression-Testing-BackstopJS-demo-2018-05-30-19_02_53.jpg" alt="A screenshot of the repo we're cloning">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>Running the example</h2>
+			<ol>
+				<li>Change into the folder <br /><code>cd Visual-Regression-Testing-BackstopJS-demo</code></li>
+				<li>Checkout a new branch <br /><code>git checkout -b my-hacking-1</code></li>
+				<li>Install Node dependencies <br /><code>npm install</code></li>
+				<li>Run the example script <br /><code>npm run start</code></li>
+				<li>Wait for the results (it should open in your browser automatically)</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>Running the multiple site example (pt 1)</h2>
+			<ol>
+				<li>Commit your existing changes<br /><code>git commit -am "All of my changes"</code></li>
+				<li>Checkout the branch<br /><code>git checkout multiple-sites</code></li>
+				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-2</code></li>
+				<li>Re-install Node dependies<br /><code>npm install</code></li>
+				<li>Rerun the example script<br /><code>npm run start</code> (and type a site name from the list when prompted)</li>
+				<li>Wait for the results</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>Running the multiple site example (pt 2)</h2>
+			<ol>
+				<li>Run the command <code>npm run start -- --all</code> (note the extra <code>--</code>)</li>
+				<li>Wait for the results (from multiple sites!)</li>
+				<li>Edit <code>includes/sitesToUpdate.js</code> (list of sites to test)</li>
+				<ul>
+					<li>Try changing to one (or more) of your sites</li>
+					<li><code>BackstopReferenceBaseUrl</code> is your local / development URL</li>
+					<li><code>BackstopTestUrl</code> is your production site URL</li>
+					<li><code>pathsToTest</code> is the array of URIs to test for each site</li>
+				</ul>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div class="text">
+			<h2>Running the multiple site example (notes)</h2>
+			<ul>
+				<li><code>npm run start</code> tests a single site</li>
+				<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
+				<li><code>npm run start -- --all</code> tests all the sites in <code>includes/sitesToUpdate.js</code></li>
+				<li>Backstop config doesn't have to be hard-coded JSON</li>
+				<ul>
+					<li>See <code>includes/backstopConfig.js</code> for a dynamic configuration example</li>
+				</ul>
+			</ul>
 		</div>
 	</section>
 
@@ -662,7 +636,7 @@
 		<div class="title">
 			<div class="background"></div>
 			<div class="text one-line">
-				<h2>Breakout sessions</h2>
+				<h2>Q&A</h2>
 			</div>
 		</div>
 	</section>
