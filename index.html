@@ -158,7 +158,7 @@
 
 	<section class="slide image-r">
 		<div class="text">
-			<h2>Visual Regression Benefits</h2>
+			<h2>Visual Regression: Benefits</h2>
 			<ul>
 				<li>"Reference vs Test" Comparison</li>
 				<ul>
@@ -178,11 +178,12 @@
 
 	<section class="slide image-r">
 		<div class="text">
-			<h2>Visual Regression Limitations</h2>
+			<h2>Limits to Visual Regression</h2>
 			<ul>
 				<li>Lots of noise in the testing process</li>
 				<li>High number of false negatives</li>
 				<li>Difficulties with dynamic content</li>
+				<li><em>Still saves time</em></li>
 			</ul>
 		</div>
 		<figure>
@@ -220,57 +221,58 @@
 	<section class="slide image-r">
 		<h2>Everything defined int he backstop.json file</h2>
 		<pre class="smaller"><code>
-{
-  "viewports": [
-    {
-      "name": "phone",
-      "width": 320,
-      "height": 480
-    },
-    {
-      "name": "tablet_v",
-      "width": 568,
-      "height": 1024
-    },
-    {
-      "name": "tablet_h",
-      "width": 1024,
-      "height": 768
-    },
-    {
-      "name": "desktop",
-      "width": 1920,
-      "height": 1080
-    }
-  ],
-  "scenarios": [
-    {
-      "label": "Homepage",
-      "url": "https://www.pantheondemo.com/",
-      "referenceUrl": "https://pantheonweeklydemosite.lndo.site/",
-      "hideSelectors": [
-				".twitter-feed"
-			],
-      "selectors": [
-        "document"
-      ],
-      "readyEvent": null,
-      "delay": 1500,
-      "misMatchThreshold" : 0.1
-    }
-  ],
-  "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test": "backstop_data/bitmaps_test",
-    "compare_data": "backstop_data/bitmaps_test/compare.json",
-    "casper_scripts": "backstop_data/casper_scripts"
-  },
-  "engine": "chrome",
-  "report": [ "browser", "CI" ],
-  "casperFlags": [],
-  "debug": false,
-  "port": 3001
-}
+			{
+			  "id": "backstop_default",
+			  "viewports": [
+			    {
+			      "label": "phone",
+			      "width": 320,
+			      "height": 480
+			    },
+			    {
+			      "label": "tablet",
+			      "width": 1024,
+			      "height": 768
+			    }
+			  ],
+			  "scenarios": [
+			    {
+			      "label": "Homepage",
+			      "url": "https://pantheonweeklydemosite.lndo.site/",
+			      "referenceUrl": "https://www.pantheondemo.com/",
+			      "readyEvent": "",
+			      "readySelector": "",
+			      "delay": 0,
+			      "hideSelectors": [],
+			      "removeSelectors": [],
+			      "hoverSelector": "",
+			      "clickSelector": "",
+			      "postInteractionWait": 0,
+			      "selectors": [],
+			      "selectorExpansion": true,
+			      "expect": 0,
+			      "misMatchThreshold" : 0.1,
+			      "requireSameDimensions": true
+			    }
+			  ],
+			  "paths": {
+			    "bitmaps_reference": "backstop_data/bitmaps_reference",
+			    "bitmaps_test": "backstop_data/bitmaps_test",
+			    "engine_scripts": "backstop_data/engine_scripts",
+			    "html_report": "backstop_data/html_report",
+			    "ci_report": "backstop_data/ci_report"
+			  },
+			  "report": ["browser"],
+			  "engine": "puppeteer",
+			  "engineOptions": {
+			    "args": ["--no-sandbox"]
+			  },
+			  "asyncCaptureLimit": 5,
+			  "asyncCompareLimit": 50,
+			  "debug": false,
+			  "debugWindow": false
+			}
+
 </code></pre>
 	</section>
 
@@ -283,8 +285,8 @@
 				<li>Edit your <code>backstop.json</code> file:
 					<ul>
 						<li><code>label</code>: name of your scenario</li>
-						<li><code>url</code>: <em>production</em> URL</li>
-						<li><code>referenceUrl</code>: <em>local</em> or <em>development</em> URL</li>
+						<li><code>url</code>: <em>local</em> or <em>development</em> URL</li>
+						<li><code>referenceUrl</code>: <em>production</em> URL</li>
 					</ul></li>
 				<li>Create new reference screenshots: <code>backstop reference</code></li>
 				<li>Run tests: <code>backstop test</code></li>
