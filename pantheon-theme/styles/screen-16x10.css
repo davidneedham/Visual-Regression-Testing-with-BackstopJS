@@ -466,7 +466,7 @@ a {
     margin-left: -2em;
     color: #bdbdbd;
     counter-increment: code;
-    content: counter(code, decimal-leading-zero) "."
+    content: counter(code, decimal-leading-zero) ".";
 }
 
 .slide pre code mark {
