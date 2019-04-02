@@ -159,15 +159,8 @@
 	</section>
 
 	<section class="slide image-r">
-		<h2>Difference:</h2>
-		<figure>
-			<img src="pictures/15-Automated-Visual-QA-Scrubber-900px.gif" alt="A screenshot of a website showing the differences highlighted">
-		</figure>
-	</section>
-
-	<section class="slide image-r">
 		<div class="text">
-			<h2>Visual Regression: The New Pixel Perfect</h2>
+			<h2>Visual Regression: <br/>The New Pixel Perfect</h2>
 			<ul>
 				<li class="next">The Power of Machine Vision</li>
 				<li class="next">Diligent Difference Detection</li>
@@ -177,6 +170,13 @@
 		</div>
 		<figure>
 			<img class="cover" src="pictures/15-visual-regression-report.jpg" alt="A screenshot of a generated visual regression report">
+		</figure>
+	</section>
+
+	<section class="slide image-r">
+		<h2>Difference:</h2>
+		<figure>
+			<img src="pictures/15-Automated-Visual-QA-Scrubber-900px.gif" alt="A screenshot of a website showing the differences highlighted">
 		</figure>
 	</section>
 
@@ -242,11 +242,11 @@
 	</section>
 
 	<section class="slide image-r">
-		<h2>Everything defined int he backstop.json file</h2>
+		<h2>Everything defined in the backstop.json file</h2>
 		<pre class="smaller"><code>
 			{
 			  "id": "backstop_default",
-			  "viewports": [
+			  <mark>"viewports": [</mark>
 			    {
 			      "label": "phone",
 			      "width": 320,
@@ -258,11 +258,11 @@
 			      "height": 768
 			    }
 			  ],
-			  "scenarios": [
+			  <mark>"scenarios": [</mark>
 			    {
-			      "label": "Homepage",
-			      "url": "https://pantheonweeklydemosite.lndo.site/",
-			      "referenceUrl": "https://www.pantheondemo.com/",
+			      <mark>"label": "Homepage",</mark>
+			      <mark>"url": "https://pantheonweeklydemosite.lndo.site/",</mark>
+			      <mark>"referenceUrl": "https://www.pantheondemo.com/",</mark>
 			      "readyEvent": "",
 			      "readySelector": "",
 			      "delay": 0,

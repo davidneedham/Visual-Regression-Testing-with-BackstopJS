@@ -457,7 +457,8 @@ a {
 }
 
 .slide pre code:not(:only-child).mark {
-    background: #edf7ee
+    background: #edf7ee;
+    color: #ffffff;
 }
 
 .slide pre code:not(:only-child)::before {
@@ -471,12 +472,16 @@ a {
 .slide pre mark {
     position: relative;
     z-index: -1;
-    margin: 0 -.3em
+    margin: 0 -.3em;
+    color: #fff;
+    /* background: #efd01b94; */
+    border-bottom: 1px dashed #efd01b;
+    background: none;
 }
 
 .slide pre mark.important {
     background: #4caf50;
-    color: #fff
+    color: #fff;
 }
 
 .progress,
