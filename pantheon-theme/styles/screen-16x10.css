@@ -930,6 +930,12 @@ a {
   display: none;
 }
 
+.slide .setup-instructions,
+.slide .setup-instructions a {
+  color: white;
+  font-family: monospace;
+}
+
 .slide .title {
   position: absolute;
   background: black url(../images/logos/Pantheon_Tag_Color_rev.svg) 96% center / 250px no-repeat;
