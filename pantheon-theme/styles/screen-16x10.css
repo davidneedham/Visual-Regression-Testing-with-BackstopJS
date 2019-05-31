@@ -180,7 +180,7 @@ a {
 }
 
 .shower {
-    color: #FFF;
+    color: #000;
     counter-reset: slide;
     font-family: Avenir, sans-serif;
     -webkit-print-color-adjust: exact;
@@ -241,7 +241,7 @@ a {
     padding: 104px 112px 0 96px;
     width: 1024px;
     height: 640px;
-    background: #000;
+    background: #fff;
     line-height: 1.25;
     font-size: 24px
 }
@@ -257,7 +257,7 @@ a {
 
 .slide h2 {
     margin-bottom: 32px;
-    color: #fff;
+    color: #000;
     font: 36px/1 Avenir Light, sans-serif
 }
 
@@ -272,7 +272,7 @@ a {
 
 .slide a {
     color: #EFCF1C;
-
+su
 }
 
 .slide b,
@@ -440,6 +440,10 @@ a {
     white-space: normal;
     overflow: scroll;
     max-height: 500px;
+}
+
+.slide code {
+  color: #fff;
 }
 
 .slide pre code {
