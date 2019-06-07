@@ -441,6 +441,14 @@ su
     overflow: scroll;
     max-height: 500px;
 }
+.slide.code-block code {
+  color: #000;
+}
+
+.slide.code-block code mark {
+  background-color: #efd01b94;
+  color: #000;
+}
 
 .slide code {
   color: #fff;
