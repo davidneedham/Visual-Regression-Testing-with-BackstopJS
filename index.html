@@ -89,7 +89,7 @@
 				<li>Windows users also need <a href="https://www.python.org/downloads/">Python</a> installed</li>
 			</ul>
 			<li><a href="https://github.com/garris/BackstopJS">BackstopJS</a> installed globally<ul><li><code>npm install -g backstopjs</code></li></ul></li>
-			<li>Our <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">standalone Node.js app</a></li>
+			<li>The <a href="https://github.com/davidneedham/visual-regression-testing-workshop"> Node.js example app</a></li>
 			<li>A “live” website that is web-accessible</li>
 			<li>A “dev” version of that same website (local is great)</li>
 		</ul>
@@ -406,12 +406,12 @@
 	<section class="slide image-r">
 		<div class="text">
 			<h2>Clone the example repo</h2>
-			<p>We've created <a href="https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git">an example repo</a> that we're going to clone to give you a jumpstart.</p>
+			<p>We've created <a href="https://github.com/davidneedham/visual-regression-testing-workshop">an example repo</a> that we're going to clone to give you a jumpstart.</p>
 			<p>There are detailed instructions in the README to run through this on your own next time. </p>
 			<p>Today we're going to get started by cloning the repo:</p>
 		</div>
 
-		<code class="block">git clone https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo.git</code>
+		<code class="block">git clone https://github.com/davidneedham/visual-regression-testing-workshop</code>
 		<figure>
 			<img class="cover" src="pictures/24-screencapture-github-davidneedham-Visual-Regression-Testing-BackstopJS-demo-2018-05-30-19_02_53.jpg" alt="A screenshot of the repo we're cloning">
 		</figure>
@@ -419,9 +419,9 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Running the example</h2>
+			<h2>Running the example node app</h2>
 			<ol>
-				<li>Change into the folder <br /><code>cd Visual-Regression-Testing-BackstopJS-demo</code></li>
+				<li>Change into the folder <br /><code>cd visual-regression-testing-workshop</code></li>
 				<li>Checkout a new branch <br /><code>git checkout -b my-hacking-1</code></li>
 				<li>Install Node dependencies <br /><code>npm install</code></li>
 				<li>Run the example script <br /><code>npm run start</code></li>
@@ -432,56 +432,17 @@
 
 	<section class="slide">
 		<div class="text">
-			<h2>Hacking the example</h2>
-			<ol>
-				<li>Edit <code>includes/backstop.json</code></li>
-				<li>Rerun the script with <code>npm run start</code></li>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (pt 1)</h2>
-			<ol>
-				<li>Commit your existing changes<br /><code>git commit -am "All of my changes"</code></li>
-				<li>Checkout the branch<br /><code>git checkout multiple-sites</code></li>
-				<li>Checkout a new branch to work on<br /><code>git checkout -b my-hacking-2</code></li>
-				<li>Re-install Node dependies<br /><code>npm install</code></li>
-				<li>Rerun the example script<br /><code>npm run start</code> (and type a site name from the list when prompted)</li>
-				<li>Wait for the results</li>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (pt 2)</h2>
-			<ol>
-				<li>Run the command <code>npm run start -- --all</code> (note the extra <code>--</code>)</li>
-				<li>Wait for the results (from multiple sites!)</li>
-				<li>Edit <code>includes/sitesToUpdate.js</code> (list of sites to test)</li>
+			<h2>Customizing the example</h2>
+			<ul>
+				<li>Edit <code>inc/sitesToTest.js</code> is the list of sites to test</li>
 				<ul>
-					<li>Try changing to one (or more) of your sites</li>
-					<li><code>BackstopReferenceBaseUrl</code> is your local / development URL</li>
-					<li><code>BackstopTestUrl</code> is your production site URL</li>
+					<li>Try adding a section for your own site.</li>
+					<li><code>nonProductionBaseUrl</code> is your local / development URL</li>
+					<li><code>productionBaseUrl</code> is your production site URL</li>
 					<li><code>pathsToTest</code> is the array of URIs to test for each site</li>
 				</ul>
-			</ol>
-		</div>
-	</section>
-
-	<section class="slide">
-		<div class="text">
-			<h2>Running the multiple site example (notes)</h2>
-			<ul>
-				<li><code>npm run start</code> tests a single site</li>
-				<li>Add <code> -- --site=my-cool-site</code> to specify a site (no prompt)</li>
-				<li><code>npm run start -- --all</code> tests all the sites in <code>includes/sitesToUpdate.js</code></li>
-				<li>Backstop config doesn't have to be hard-coded JSON</li>
-				<ul>
-					<li>See <code>includes/backstopConfig.js</code> for a dynamic configuration example</li>
-				</ul>
+				<li>Edit <code>inc/backstopConfig.js</code> (the viewports, delay, etc)</li>
+				<li>Re-run the demo with <code>npm run start</code></li>
 			</ul>
 		</div>
 	</section>
